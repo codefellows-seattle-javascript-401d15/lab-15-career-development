@@ -19,7 +19,8 @@ Stack.prototype.peek = function() {
 let stringOne = '{}{{}}';
 
 Stack.prototype.closeBracket = function(string) {
-  
+  if([...string].length % 2 !== 0) return false;
+
   let stack = new Stack();
   
   for(let i = 0; i < string.length; i++) {  
@@ -37,6 +38,7 @@ Stack.prototype.closeBracket = function(string) {
 let stringTwo = '{()}[)]';
 
 Stack.prototype.mixedCharacters = function(string) {
+  if([...string].length % 2 !== 0) return false;
 
   let stackOne = new Stack();
   let stackTwo = new Stack();
