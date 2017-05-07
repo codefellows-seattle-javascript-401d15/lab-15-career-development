@@ -2,10 +2,6 @@
 
 const Node = require('./node.js');
 
-const Stack = require('./stack.js');
-
-// const Queue = require('./queue.js');
-
 const LinkedList = module.exports = function(array) {
   this.nead = null;
   if(array) array.forEach(val => this.insert(val));
@@ -53,9 +49,7 @@ LinkedList.prototype.remove = function(val) {
   }
 };
 
-LinkedList.prototype.shift = function () {
-  if (!this.head) throw new ReferenceError('The list is empty.');
-  
+LinkedList.prototype.shift = function () {  
   try {
     let current = this.head;
     this.head = this.head.next;
