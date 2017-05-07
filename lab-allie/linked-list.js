@@ -2,6 +2,10 @@
 
 const Node = require('./node.js');
 
+const Stack = require('./stack.js');
+
+// const Queue = require('./queue.js');
+
 const LinkedList = module.exports = function(array) {
   this.nead = null;
   if(array) array.forEach(val => this.insert(val));
