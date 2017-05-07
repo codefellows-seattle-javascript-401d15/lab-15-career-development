@@ -8,6 +8,8 @@ const Queue = require('../queue.js');
 
 let stack = new Stack();
 
+let queue = new Queue();
+
 describe('testing stack and queue methods', function() {
   describe('testing stack methods', function() {
     it('should instantiate a new stack', done => {
@@ -97,7 +99,7 @@ describe('testing stack and queue methods', function() {
       });
     });
     
-    describe('testing the mixed characters', function() {
+    describe('testing the mixed characters method', function() {
       let mixedBracketTest = new Stack();
       let validMixedString = '({{[]}})';
       let invalidMixedString = 'blah';
@@ -116,5 +118,61 @@ describe('testing stack and queue methods', function() {
     });
   });
 
-  describe('testing queue methods', function() {});
+  describe('testing queue methods', function() {
+    it('should instantiate a new queue', done => {
+      expect(queue).to.exist;
+      done();
+    });
+    
+    it('should create an object', done => {
+      expect(queue).to.be.a('object');
+      done();
+    });
+    
+    describe('testing the enqueue method', function() {
+      it('should not contain the value before it is added', done => {
+        expect(queue).to.not.have.valueOf(16);
+        done();
+      });
+      
+      it('should contain the value after it is added', done => {
+        queue.enqueue(16);
+        expect(queue).to.have.valueOf(16);
+        done();
+      });
+      
+      it('should add a new value as the head of the queue', done => {
+        queue.enqueue(14);
+        expect(queue.head.val).to.equal(14);
+        done();
+      });
+    });
+    
+    describe('testing the dequeue method', function() {
+      let testDequeue = new Queue();
+      testDequeue.enqueue(12).enqueue(9).enqueue(5);
+      it('should contain the value before it is removed', done => {
+        expect(testDequeue).to.have.valueOf(12);
+        done();
+      });
+      
+      it('should remove the first value that was added', done => {
+        testDequeue.dequeue();
+        expect(testDequeue).to.not.have.valueOf(12);
+        done();
+      });
+      
+      it('should still contain the other values', done => {
+        expect(testDequeue).to.have.valueOf(9);
+        expect(testDequeue).to.have.valueOf(5);
+        done();
+      });
+      
+      it('should remove the next value that was added', done => {
+        testDequeue.dequeue();
+        expect(testDequeue).to.not.have.valueOf(9);
+        done();
+      });
+    });
+  });
 });
