@@ -2,11 +2,13 @@
 
 const Queue = module.exports = require('./SLL');
 
+//O(1)
 Queue.prototype.enqueue = function(val){
   this.insert(val);
   return this;
 };
 
+//O(n)
 Queue.prototype.dequeue = function(){
   let curr = null;
 
