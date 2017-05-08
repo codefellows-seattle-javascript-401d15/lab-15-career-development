@@ -2,11 +2,13 @@
 
 const Queue = module.exports = require('./linked-lists');
 
+//O(n) Big O Notation
 Queue.prototype.enqueue = function(val) {
   this.insert(val);
   return this;
 };
 
+//O(n) Big O Notation
 Queue.prototype.dequeue = function() {
   let current = null;
 
