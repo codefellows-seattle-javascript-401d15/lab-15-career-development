@@ -56,19 +56,19 @@ describe('testing stack and queue methods', function() {
       });
       
       it('should remove the value', done => {
-        stackPop.pop(7);
-        expect(stackPop).to.not.have.valueOf(7);
+        stackPop.pop();
+        expect(stackPop).to.not.have.valueOf(9);
         done();
       });
       
       it('should contain the value before the pop method is applied', done => {
-        expect(stackPop).to.have.valueOf(12);
+        expect(stackPop).to.have.valueOf(7);
         done();
       });
       
       it('should remove another value', done => {
-        stackPop.pop(12);
-        expect(stackPop).to.not.have.valueOf(12);
+        stackPop.pop();
+        expect(stackPop).to.not.have.valueOf(7);
         done();
       });
       
@@ -100,10 +100,10 @@ describe('testing stack and queue methods', function() {
       });
     });
     
-    describe('testing the close bracket method', function() {
+    describe.only('testing the close bracket method', function() {
       let closeBracketTest = new Stack();
       let validString = '({{[]}})';
-      let invalidString = 'blah';
+      let invalidString = 'blahh';
       
       it('should evaluate to true if a valid string is passed in', done => {
         expect(closeBracketTest.closeBracket(validString)).to.be.true;
@@ -116,10 +116,10 @@ describe('testing stack and queue methods', function() {
       });
     });
     
-    describe('testing the mixed characters method', function() {
+    describe.only('testing the mixed characters method', function() {
       let mixedBracketTest = new Stack();
       let validMixedString = '({{[]}})';
-      let invalidMixedString = 'blah';
+      let invalidMixedString = ')){[}';
       
       it('should evaluate to true if a valid string is passed in', done => {
         expect(mixedBracketTest.closeBracket(validMixedString)).to.be.true;
