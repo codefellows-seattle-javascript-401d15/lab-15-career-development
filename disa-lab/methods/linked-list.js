@@ -3,8 +3,8 @@
 const Node = require('./node');
 
 const LinkedList = module.exports = function(array) {
-  this.head = null;
-  //does something else go here?
+  this.head = null;//I know we need this.
+  this.length = 0;//Do we need this?
   if(array) array.forEach(val => this.insert(val));
 };
 
