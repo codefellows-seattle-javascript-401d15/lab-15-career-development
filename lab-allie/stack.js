@@ -23,7 +23,9 @@ let stringOne = '{}{{}}';
 
 //O(n)
 Stack.prototype.closeBracket = function(string) {
-  if([...string].length % 2 !== 0) return false;
+  if([...string].length % 2 !== 0) {
+    return false;
+  } 
 
   let stack = new Stack();
   
@@ -39,23 +41,26 @@ Stack.prototype.closeBracket = function(string) {
   }
 };
 
-let stringTwo = '{()}[)]';
+let string = '{()}[)]';
 
 //O(n)
 Stack.prototype.mixedCharacters = function(string) {
-  if([...string].length % 2 !== 0) return false;
+  if([...string].length % 2 !== 0) {
+    return false;
+  };
 
   let stackOne = new Stack();
   let stackTwo = new Stack();
   let stackThree = new Stack();
 
   for(let i = 0; i < string.length; i++){
-    if (stringTwo.charAt(i) === '{') {stackOne.push(stringTwo.charAt(i));}
-    else if (stringTwo.charAt(i) === '}') {stackOne.pop();}
-    else if (stringTwo.charAt(i) === '(') {stackTwo.push(stringTwo.charAt(i));}
-    else if (stringTwo.charAt(i) === ')') {stackTwo.pop();}
-    else if (stringTwo.charAt(i) === '[') {stackThree.push(stringTwo.charAt(i));}
-    else if (stringTwo.charAt(i) === ']') {stackThree.pop();}
+    if (string.charAt(i) === '{') {
+      stackOne.push(string.charAt(i));}
+    else if (string.charAt(i) === '}') {stackOne.pop();}
+    else if (string.charAt(i) === '(') {stackTwo.push(string.charAt(i));}
+    else if (string.charAt(i) === ')') {stackTwo.pop();}
+    else if (string.charAt(i) === '[') {stackThree.push(string.charAt(i));}
+    else if (string.charAt(i) === ']') {stackThree.pop();}
     else return false;
   }
   return true;

@@ -100,38 +100,48 @@ describe('testing stack and queue methods', function() {
       });
     });
     
-    describe.only('testing the close bracket method', function() {
+    describe('testing the close bracket method', function() {
       let closeBracketTest = new Stack();
       let validString = '({{[]}})';
       let invalidString = 'blahh';
+      let secondInvalidString = '{{]}}';
       
       it('should evaluate to true if a valid string is passed in', done => {
         expect(closeBracketTest.closeBracket(validString)).to.be.true;
         done();
       });
-      // TEST IS RETURNING TRUE
+  
       it('should evalute to false if an invalid string is passed in', done => {
         expect(closeBracketTest.closeBracket(invalidString)).to.be.false;
         done();
       });
+      
+      it('should evaluate to false if an invalid string is passed in', done => {
+        expect(closeBracketTest.closeBracket(secondInvalidString)).to.be.false;
+        done();
+      });
     });
     
-    describe.only('testing the mixed characters method', function() {
+    describe('testing the mixed characters method', function() {
       let mixedBracketTest = new Stack();
       let validMixedString = '({{[]}})';
       let invalidMixedString = ')){[}';
+      let secondInvalidMixedString = 'blech';
       
       it('should evaluate to true if a valid string is passed in', done => {
-        expect(mixedBracketTest.closeBracket(validMixedString)).to.be.true;
+        expect(mixedBracketTest.mixedCharacters(validMixedString)).to.be.true;
         done();
       });
-      // TEST IS RETURNING TRUE
+      
       it('should evalute to false if an invalid string is passed in', done => {
-        expect(mixedBracketTest.closeBracket(invalidMixedString)).to.be.false;
+        expect(mixedBracketTest.mixedCharacters(invalidMixedString)).to.be.false;
         done();
       });
       
-      
+      it('should evaluate to false if an invalid string is passed in', done => {
+        expect(mixedBracketTest.mixedCharacters(secondInvalidMixedString)).to.be.false;
+        done();
+      });
     });
   });
 
