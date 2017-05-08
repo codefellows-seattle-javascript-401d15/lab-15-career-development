@@ -26,15 +26,13 @@ Stack.prototype.peek = function() {
 // }
 
 
-let stringOne = '{}{{}}';
-
 Stack.prototype.closeBracket = function(string) {
 
   for(let i = 0; i < string.length; i++) {
-    if (stringOne.charAt(i) === '{' || stringOne.charAt(i) === '(' || stringOne.charAt(i) === '[') {
-      Stack.push(stringOne.charAt(i));
-    } else if (stringOne.charAt(i) === '}' || stringOne.charAt(i) === ')' || stringOne.charAt(i) === ']') {
-      Stack.pop();
+    if (string.charAt(i) === '{' || string.charAt(i) === '(' || string.charAt(i) === '[') {
+      Stack.prototype.push(string.charAt(i));
+    } else if (string.charAt(i) === '}' || string.charAt(i) === ')' || string.charAt(i) === ']') {
+      Stack.prototype.pop();
     } else {
       return false;
     }
@@ -42,22 +40,25 @@ Stack.prototype.closeBracket = function(string) {
   return true;
 };
 
-let stringTwo = '{()}[)]';
-
 Stack.prototype.mixedCharacters = function(string) {
 
-  let stackOne = new Stack();
-  let stackTwo = new Stack();
-  let stackThree = new Stack();
+  if (string.length%2 === 0) {
+    let stackOne = new Stack();
+    console.log(stackOne);
+    let stackTwo = new Stack();
+    let stackThree = new Stack();
 
-  for(let i = 0; i < stringTwo.length; i++){
-    if (stringTwo.charAt(i) === '{') {stackOne.push(stringTwo.charAt(i))}
-    else if (stringTwo.charAt(i) === '}') {stackOne.pop()}
-    else if (stringTwo.charAt(i) === '(') {stackTwo.push(stringTwo.charAt(i))}
-    else if (stringTwo.charAt(i) === ')') {stackTwo.pop()}
-    else if (stringTwo.charAt(i) === '[') {stackThree.push(stringTwo.charAt(i))}
-    else if (stringTwo.charAt(i) === ']') {stackThree.pop()}
-    else return false;
+    for(let i = 0; i < string.length; i++){
+      if (string.charAt(i) === '{') stackOne.push(string.charAt(i))
+      else if (string.charAt(i) === '}') stackOne.pop()
+      else if (string.charAt(i) === '(') stackTwo.push(string.charAt(i))
+      else if (string.charAt(i) === ')') stackTwo.pop()
+      else if (string.charAt(i) === '[') stackThree.push(string.charAt(i))
+      else if (string.charAt(i) === ']') stackThree.pop()
+      else return false;
+    }
+    return true;
+  } else {
+    throw new Error('Invalid string; odd number of values');
   }
-  return true;
 };
