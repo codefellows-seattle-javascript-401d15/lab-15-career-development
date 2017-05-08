@@ -1,0 +1,19 @@
+{
+  "name": "caleb-lab",
+  "version": "1.0.0",
+  "description": "* Create a stack of brackets   * Separate brackets by type * Create an O(n) or better for checking the brackets * Create error responses for what's missing, similar to what linter does.",
+  "main": "bracketsort.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "mocha": "^3.3.0"
+  }
+}
