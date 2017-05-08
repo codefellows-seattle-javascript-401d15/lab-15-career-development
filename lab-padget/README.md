@@ -1,20 +1,12 @@
 # Lab 15: Stacks & Queues Data Structure
 
 ## Description
-For this lab we worked with stacks and queues, which are abstract data types.
+For this lab we worked with stacks and queues, which are abstract data types. The goal was to implement a function to determine if a string has matching brackets.
 
 * For more information see: [class 15](https://github.com/codefellows/seattle-javascript-401d15/tree/master/class-15-career-development) and [lab 15](https://github.com/codefellows-seattle-javascript-401d15/lab-15-career-development).
 
 ## Version
 * 0.1.0
-
-## Start the server
-In [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) (Terminal) enter the command:
-
-```server
-nodemon server.js
-```
-Enter `control c` to disconnect from the server.
 
 ## Installation
 Please visit the following pages for how to install your project locally.
@@ -29,8 +21,9 @@ Please visit the following pages for how to install your project locally.
 
 ```npm install
 npm init
-npm install -S uuid
 npm install -D mocha chai
+npm install -D debug
+npm install -S bluebird
 ```
 ### Dependencies
 The result of installation above.
@@ -38,10 +31,14 @@ The result of installation above.
 ```npm result
 "devDependencies": {
   "chai": "^3.5.0",
+  "debug": "^2.6.6",
   "mocha": "^3.3.0"
+},
+"dependencies": {
+  "bluebird": "^3.5.0"
 }
 ```
-* `nodemon server.js`
+* `node index.js`
 
 ## Running Tests
 In [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)) (Terminal) enter the command:
@@ -58,7 +55,7 @@ npm run test
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/mmpadget/lab-15-career-development/blob/lab-15/lab-padget/LICENSE) file for details.
 
 ## Acknowledgments
 * Code Fellows
