@@ -2,16 +2,19 @@
 
 const Stack = module.exports = require('./linked-lists');
 
+// O(n) Big O Notation
 Stack.prototype.push = function(val) {
   this.insert(val);
   return this;
 };
 
+// O(n) Big O Notation
 Stack.prototype.pop = function() {
   this.shift();
   return this;
 };
 
+// O(n) Big O Notation
 Stack.prototype.peek = function() {
   return this.head.val;
 };
@@ -25,7 +28,7 @@ Stack.prototype.peek = function() {
 //   if the next one is a closing bracket, pop the openening bracket off the stack
 // }
 
-
+// O(n) Big O Notation
 Stack.prototype.closeBracket = function(string) {
 
   for(let i = 0; i < string.length; i++) {
@@ -40,11 +43,11 @@ Stack.prototype.closeBracket = function(string) {
   return true;
 };
 
+// O(n) Big O Notation
 Stack.prototype.mixedCharacters = function(string) {
 
   if (string.length%2 === 0) {
     let stackOne = new Stack();
-    console.log(stackOne);
     let stackTwo = new Stack();
     let stackThree = new Stack();
 

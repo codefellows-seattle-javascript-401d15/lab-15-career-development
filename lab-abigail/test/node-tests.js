@@ -1,6 +1,7 @@
 'use strict';
 
 const Stack = require('../lib/methods');
+const Queue = require('../lib/queue');
 const chai = require('chai');
 const http = require('chai-http');
 const expect = chai.expect;
@@ -149,6 +150,69 @@ describe('Mixed Bracket Tests', function() {
 
   it('invalid input should produce a false', function(done) {
     expect(falseMixedBracket).to.be.equal(false);
+    done();
+  });
+});
+
+describe('Enqueue Method functionality', function() {
+  let testQueue = new Queue();
+  testQueue.enqueue(1);
+  testQueue.enqueue(2);
+  testQueue.enqueue(3);
+  testQueue.enqueue(4);
+
+  it('head should be equal to 4', function(done) {
+    expect(testQueue.head.val).to.be.equal(4);
+    done();
+  });
+
+  it('head should be a number', function(done) {
+    expect(testQueue.head.val).to.be.a('number');
+    done();
+  });
+
+  it('head should not be equal to 3', function(done) {
+    expect(testQueue.head.val).to.not.equal(3);
+    done();
+  });
+});
+
+
+
+describe.only('Dequeue Method functionality', function() {
+  let testQueue = new Queue();
+  testQueue.enqueue(1);
+  testQueue.enqueue(2);
+  testQueue.enqueue(3);
+  testQueue.enqueue(4);
+  testQueue.dequeue();
+  console.log(testQueue);
+
+  it('head should be equal to 4', function(done) {
+    expect(testQueue.head.val).to.be.equal(4);
+    done();
+  });
+
+  it('head should be a number', function(done) {
+    expect(testQueue.head.val).to.be.a('number');
+    done();
+  });
+
+  it('node head.next should be equal to 3', function(done) {
+    expect(testQueue.head.next.val).to.equal(3);
+    done();
+  });
+
+  it('Dequeued value should be null', function(done) {
+    testQueue.dequeue();
+    expect(testQueue.head.next.next).to.be.null;
+    console.log(testQueue);
+    done();
+  });
+
+  it('Second Node value value should be null when dequeued a third time', function(done) {
+    testQueue.dequeue();
+    expect(testQueue.head.next).to.be.null;
     done();
   });
 });
