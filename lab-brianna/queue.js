@@ -1,6 +1,6 @@
 'use strict';
 
-const Queue = module.exports = require('./stacks');
+const Queue = module.exports = require('./linked_list');
 
 Queue.prototype.enqueue = function(val) {
   this.insert(val);
