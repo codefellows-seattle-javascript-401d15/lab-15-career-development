@@ -73,13 +73,30 @@ describe('testing stack and queue methods', function() {
       });
       
     });
-    //NEED TWO MORE TESTS HERE
-    describe('testing the peek method', function() {
+    
+    describe.only('testing the peek method', function() {
       let stackPeek = new Stack();
       stackPeek.push(1).push(2).push(3).push(4);
       it('should return the first value in the list', done => {
         expect(stackPeek.peek()).to.equal(4);
         done();
+      });
+      
+      describe('it should not return any other value in the list', function() {
+        it('should not return a value of 1', done => {
+          expect(stackPeek.peek()).to.not.equal(1);
+          done();
+        });
+        
+        it('should not return a value of 2', done => {
+          expect(stackPeek.peek()).to.not.equal(2);
+          done();
+        });
+        
+        it('should not return a value of 3', done => {
+          expect(stackPeek.peek()).to.not.equal(3);
+          done();
+        });
       });
     });
     
