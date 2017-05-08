@@ -1,0 +1,32 @@
+{
+  "name": "lab-padget",
+  "version": "0.1.0",
+  "description": "Lab 15",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmpadget/lab-15-career-development.git"
+  },
+  "keywords": [
+    "lab",
+    "15"
+  ],
+  "author": "Michael",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmpadget/lab-15-career-development/issues"
+  },
+  "homepage": "https://github.com/mmpadget/lab-15-career-development#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "debug": "^2.6.6",
+    "mocha": "^3.3.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0"
+  }
+}
