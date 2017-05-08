@@ -2,11 +2,13 @@
 
 const Queue = module.exports = require('./linked-list.js');
 
+//O(1)
 Queue.prototype.enqueue = function(val) {
   this.insert(val);
   return this;
 };
 
+//O(1)
 Queue.prototype.dequeue = function() {
   let current = null;
   

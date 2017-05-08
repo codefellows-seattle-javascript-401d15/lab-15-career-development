@@ -74,7 +74,7 @@ describe('testing stack and queue methods', function() {
       
     });
     
-    describe.only('testing the peek method', function() {
+    describe('testing the peek method', function() {
       let stackPeek = new Stack();
       stackPeek.push(1).push(2).push(3).push(4);
       it('should return the first value in the list', done => {

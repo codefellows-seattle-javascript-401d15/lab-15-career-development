@@ -7,6 +7,7 @@ const LinkedList = module.exports = function(array) {
   if(array) array.forEach(val => this.insert(val));
 };
 
+//O(1)
 LinkedList.prototype.insert = function(val) {
   try {
     if (typeof val === 'undefined') {
@@ -20,6 +21,7 @@ LinkedList.prototype.insert = function(val) {
   }
 };
 
+//O(1)
 LinkedList.prototype.remove = function(val) {
   let current;
   try {
@@ -49,6 +51,7 @@ LinkedList.prototype.remove = function(val) {
   }
 };
 
+//O(1)
 LinkedList.prototype.shift = function () {  
   try {
     let current = this.head;
@@ -60,6 +63,7 @@ LinkedList.prototype.shift = function () {
   }
 };
 
+//O(1)
 LinkedList.prototype.search = function(val) {
   try {
     let current;

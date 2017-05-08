@@ -2,22 +2,26 @@
 
 const Stack = module.exports = require('./linked-list.js');
 
+//O(1)
 Stack.prototype.push = function(val) {
   this.insert(val);
   return this;
 };
 
+//O(1)
 Stack.prototype.pop = function() {
   this.shift();
   return this;
 };
 
+//O(1)
 Stack.prototype.peek = function() {
   return this.head.val;
 };
 
 let stringOne = '{}{{}}';
 
+//O(n)
 Stack.prototype.closeBracket = function(string) {
   if([...string].length % 2 !== 0) return false;
 
@@ -37,6 +41,7 @@ Stack.prototype.closeBracket = function(string) {
 
 let stringTwo = '{()}[)]';
 
+//O(n)
 Stack.prototype.mixedCharacters = function(string) {
   if([...string].length % 2 !== 0) return false;
 
