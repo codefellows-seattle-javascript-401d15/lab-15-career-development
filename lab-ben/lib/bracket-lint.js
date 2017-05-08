@@ -19,17 +19,17 @@ module.exports = function(string) {
         stack.push(char);
         return;
       }
-      if(stack.peek === '[' && char === ']') {
+      if(stack.peek() === '[' && char === ']') {
         //remove from the stack pop()
         stack.pop();
         return;
       }
-      if(stack.peek === '{' && char === '}') {
+      if(stack.peek() === '{' && char === '}') {
         //remove from the stack pop()
         stack.pop();
         return;
       }
-      if(stack.peek === '(' && char === ')') {
+      if(stack.peek() === '(' && char === ')') {
         //remove from the stack pop()
         stack.pop();
         return;
