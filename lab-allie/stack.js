@@ -64,6 +64,7 @@ Stack.prototype.mixedCharacters = function(string) {
   return true;
 };
 
+//O(1) - STRETCH GOAL
 Stack.prototype.reversePolishNotation = function(string) {
   let stack = new Stack();
   
@@ -87,4 +88,20 @@ Stack.prototype.reversePolishNotation = function(string) {
       } else return false;
     }
   }  
+};
+
+//O(n) - STRETCH GOAL
+//Might be O(n^2) because there are two for loops but I think it's O(n) because the second for loop is not nested inside the first for loop
+Stack.prototype.queueFromStacks = function(array) {
+  let stackOne = new Stack();
+  let stackTwo = new Stack();
+  
+  for(let i = 0; i < array.length; i++) {
+    stackOne.push(array[i]);
+  }
+  
+  for(let i = 0; i < array.length-1; i++) {
+    stackTwo.push(stackOne.pop());
+  }
+  return stackTwo;
 };

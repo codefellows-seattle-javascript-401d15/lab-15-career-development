@@ -2,7 +2,6 @@
 
 const expect = require('chai').expect;
 
-const Node = require('../node.js');
 const Stack = require('../stack.js');
 const Queue = require('../queue.js');
 
@@ -200,6 +199,54 @@ describe('testing stack and queue methods', function() {
         expect(testDequeue).to.not.have.valueOf(9);
         done();
       });
+    });
+  });
+  
+  describe('testing reverse polish notation method - STRETCH', function() {
+    let rpn = new Stack();
+    
+    it('should add the numbers', done => {
+      let add = '78+';
+      expect(rpn.reversePolishNotation(add)).to.equal(15);
+      done();
+    });
+    
+    it('should subtract the numbers', done => {
+      let subtract = '27-';
+      expect(rpn.reversePolishNotation(subtract)).to.equal(5);
+      done();
+    });
+    
+    it('should multiply the numbers', done => {
+      let multiply = '77*';
+      expect(rpn.reversePolishNotation(multiply)).to.equal(49);
+      done();
+    });
+    
+    it('should divide the numbers', done => {
+      let divide = '39/';
+      expect(rpn.reversePolishNotation(divide)).to.equal(3);
+      done();
+    });
+  });
+  
+  describe('testing the creation of a queue from a stack - STRETCH', function() {
+    let makeQueue = new Stack();
+    let testArray = [1, 2, 3, 4, 5];
+    
+    it('should return a queue', done => {
+      expect(makeQueue.queueFromStacks(testArray).head.val.head.val).to.equal(1);
+      done();
+    });
+    
+    it('should return an object', done => {
+      expect(makeQueue.queueFromStacks(testArray)).to.be.a('object');
+      done();
+    });
+    
+    it('should have the numbers in the same order as the array that is passed in', done => {
+      expect(makeQueue.queueFromStacks(testArray).head.val.head.val).to.deep.equal(testArray[0]);
+      done();
     });
   });
 });
