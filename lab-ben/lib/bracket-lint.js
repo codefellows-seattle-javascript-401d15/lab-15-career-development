@@ -4,13 +4,15 @@ const Stack = require('./stack.js');
 
 //O(n)
 module.exports = function(string) {
+  let passing = true;
   let stack = new Stack();
   string.split('').forEach(char => _check(char));
 
   //if anything is on the stack after the check then fail
-  if(stack.head) return false;
+  if(stack.head) passing = false;
 
-  return true;
+  if (passing) return true;
+  return false;
 
   function _check(char) {
     if(char === '[' || char === '{' || char === '(' || char === ']' || char === '}' || char === ')') {
@@ -19,22 +21,28 @@ module.exports = function(string) {
         stack.push(char);
         return;
       }
+
+      if(!stack.head) return passing = false;
+
       if(stack.peek() === '[' && char === ']') {
         //remove from the stack pop()
         stack.pop();
         return;
       }
+
       if(stack.peek() === '{' && char === '}') {
         //remove from the stack pop()
         stack.pop();
         return;
       }
+
       if(stack.peek() === '(' && char === ')') {
         //remove from the stack pop()
         stack.pop();
         return;
       }
-      return false;
+
+      return passing = false;
     }
   }
 };
