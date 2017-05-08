@@ -51,7 +51,7 @@ describe('testing stack and queue methods', function() {
       stackPop.push(5).push(12).push(7).push(9);
       
       it('should contain the value before the pop method is applied', done => {
-        expect(stackPop).to.have.valueOf(7);
+        expect(stackPop).to.have.valueOf(9);
         done();
       });
       

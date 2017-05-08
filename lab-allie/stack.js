@@ -41,13 +41,11 @@ Stack.prototype.closeBracket = function(string) {
   }
 };
 
-let string = '{()}[)]';
-
 //O(n)
 Stack.prototype.mixedCharacters = function(string) {
   if([...string].length % 2 !== 0) {
     return false;
-  };
+  }
 
   let stackOne = new Stack();
   let stackTwo = new Stack();
@@ -64,4 +62,29 @@ Stack.prototype.mixedCharacters = function(string) {
     else return false;
   }
   return true;
+};
+
+Stack.prototype.reversePolishNotation = function(string) {
+  let stack = new Stack();
+  
+  let operators = ['+', '-', '*', '/'];
+  
+  for(let i = 0; i < string.length; i++) {
+    if(!isNaN(string.charAt(i))) stack.push(string.charAt(i));
+  
+    if(operators.includes(string.charAt(i))) {
+      let X = parseInt(stack.head.val);
+      stack.pop();
+      let Y = parseInt(stack.head.val);
+      if(string.charAt(i) === '+') {
+        return X + Y;
+      } else if (string.charAt(i) === '-') {
+        return X - Y;
+      } else if (string.charAt(i) === '*') {
+        return X * Y;
+      } else if (string.charAt(i) === '/') {
+        return X / Y;
+      } else return false;
+    }
+  }  
 };
