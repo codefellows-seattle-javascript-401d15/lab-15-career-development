@@ -1,8 +1,5 @@
 'use strict';
 
-//Not required to use Queues on lab 15
-//Notes on Queues from 5/5/17 401
-
 const Queue = module.exports = require(‘./linked_list’);
 
 Queue.prototype.tail = null;
@@ -11,7 +8,7 @@ Queue.prototype.enqueue = function(val) {
 	this.insert(val)
 	if(!this.head.next) this.tail = this.head
 	return this
-}
+};
 
 Queue.prototype.dequeue = function() {
 	let current = null;
@@ -25,4 +22,4 @@ Queue.prototype.dequeue = function() {
 		current = node
 		_setCurrent (node.next)
 	}
-}
+};
