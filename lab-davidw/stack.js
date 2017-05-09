@@ -33,13 +33,12 @@ Stack.prototype.lintBraces = function (str) {
   console.log(braceStack);
   for(let i = 0; i < str.length; i++) {
     console.log('braceStack: ', braceStack);
-    if(str.charAt(i).includes(braces['{'] || braces['('] || braces['['])) {
+    if(str.charAt(i) === braces['{'] || str.charAt(i) === braces['('] || str.charAt(i) === braces['[']) {
       braceStack.push(str.charAt(i));
       console.log('head not null?', braceStack);
+    } else if (str.charAt(i) === braces['}'] || str.charAt(i) === braces[')'] || str.charAt(i) === braces[']']) {
 
-    } else if (str.charAt(i).includes(braces['}'] || braces[')'] || braces[']'])) {
       if (braceStack.peek() === braces['{'] && str.charAt(i) === braces['}'] || braceStack.peek() === braces['('] && str.charAt(i) === braces[')'] || braceStack.peek() === braces['['] && str.charAt(i) === braces[']']) {
-        console.log(braceStack, '888');
         braceStack.pop();
       }
     } else {
