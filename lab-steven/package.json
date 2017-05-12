@@ -1,0 +1,24 @@
+{
+  "name": "lab-steven",
+  "version": "1.0.0",
+  "description": "Data structures lab, implementing stacks, queues and balancing brackets",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint ../"
+  },
+  "keywords": [
+    "SLL",
+    "queue",
+    "stack"
+  ],
+  "author": "CF Steven Johnson",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  }
+}
