@@ -1,0 +1,30 @@
+{
+  "name": "stacks-and-queues",
+  "version": "0.0.1",
+  "description": "DSA Lab 03",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint ./stack.js",
+    "start": "node index.js",
+    "build": "npm run lint && npm run start",
+    "watch": "nodemon index.js"
+  },
+  "keywords": [
+    "stack",
+    "queue",
+    "node",
+    "linked-list"
+  ],
+  "author": "Cameron Bacon",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "debug": "^2.6.6",
+    "eslint": "^3.19.0",
+    "mocha": "^3.3.0"
+  }
+}
