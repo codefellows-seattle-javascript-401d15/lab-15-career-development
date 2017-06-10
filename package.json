@@ -1,0 +1,24 @@
+{
+  "name": "lab-15-career-development",
+  "version": "1.0.0",
+  "description": "![cf](http://i.imgur.com/7v5ASc8.png) lab 15 - Stacks & Queues Data Structure\r ====",
+  "main": "methods.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renegadellama/lab-15-career-development.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renegadellama/lab-15-career-development/issues"
+  },
+  "homepage": "https://github.com/renegadellama/lab-15-career-development#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  }
+}
