@@ -1,0 +1,22 @@
+{
+  "name": "lab-ben",
+  "version": "1.0.0",
+  "description": "SLL stacks and queues",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "mocha",
+    "chai"
+  ],
+  "author": "Ben Ayzenberg",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0"
+  }
+}
